@@ -1,0 +1,86 @@
+Epson PC-FAX Driver
+Epson Scan 2
+Google Chrome
+Microsoft Edge
+Microsoft Edge Update
+PDF Complete Special Edition
+VIP Access SDK (1.0.1.4) 
+HP Setup
+Epson Event Manager
+HP Customer Experience Enhancements
+Epson FAX Utility
+Epson ScanSmart
+Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148
+Microsoft Visual C++ 2017 Redistributable (x86) - 14.16.27027
+Recovery Manager
+NETGEAR A6200 Genie
+Microsoft Visual C++ 2017 X86 Minimum Runtime - 14.16.27024
+Intel(R) Management Engine Components
+Hewlett-Packard ACLM.NET v1.1.2.0
+HP Support Assistant
+Microsoft Visual C++ 2005 Redistributable
+Epson Software Updater
+Microsoft Visual C++ 2017 X86 Additional Runtime - 14.16.27024
+Microsoft Silverlight
+Update for Microsoft .NET Framework 4.8 (KB4532941)
+Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17
+HP SimplePass PE 2011
+HP Support Information
+HP Odometer
+Intel(R) Identity Protection Technology 1.1.2.0
+Adobe Flash Player 10 ActiveX
+DirectX for Managed Code Update (Summer 2004)
+Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219
+Realtek High Definition Audio Driver
+Intel(R) Control Center
+EPSON ET-15000 Series Printer Uninstall
+Intel(R) Network Connections 15.7.176.0
+AuthenTec TrueAPI
+Microsoft Visual C++ 2005 Redistributable (x64)
+Microsoft .NET Framework 4.8
+Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219
+Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.4148
+Google Drive
+Microsoft Visual C++ 2005 Redistributable (x64)
+Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.17
+Intel(R) Network Connections 15.7.176.0
+Microsoft .NET Framework 4.8
+EpsonNet Print
+Product Improvement Study for HP ENVY Photo 7800 series
+HP Auto
+HP Vision Hardware Diagnostics
+Epson PC-FAX Driver
+Epson Scan 2
+Google Chrome
+Microsoft Edge
+Microsoft Edge Update
+PDF Complete Special Edition
+VIP Access SDK (1.0.1.4) 
+HP Setup
+Epson Event Manager
+HP Customer Experience Enhancements
+Epson FAX Utility
+Epson ScanSmart
+Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148
+Microsoft Visual C++ 2017 Redistributable (x86) - 14.16.27027
+Recovery Manager
+NETGEAR A6200 Genie
+Microsoft Visual C++ 2017 X86 Minimum Runtime - 14.16.27024
+Intel(R) Management Engine Components
+Hewlett-Packard ACLM.NET v1.1.2.0
+HP Support Assistant
+Microsoft Visual C++ 2005 Redistributable
+Epson Software Updater
+Microsoft Visual C++ 2017 X86 Additional Runtime - 14.16.27024
+Microsoft Silverlight
+Update for Microsoft .NET Framework 4.8 (KB4532941)
+Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17
+HP SimplePass PE 2011
+HP Support Information
+HP Odometer
+Intel(R) Identity Protection Technology 1.1.2.0
+Adobe Flash Player 10 ActiveX
+DirectX for Managed Code Update (Summer 2004)
+Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219
+Realtek High Definition Audio Driver
+Intel(R) Control Center
