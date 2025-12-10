@@ -1,0 +1,357 @@
+GET https://www.madfox.luxe/market.php?=&country=239&database=&city=&state=&card_type=&zip=&bank_name=&card_level= 200
+
+Request Headers
+
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Linux; Android 14; Infinix X6882B Build/UP1A.231005.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/142.0.7444.171 Mobile Safari/537.36
+Referer: https://www.madfox.luxe/market.php?=&country=239&database=&city=&state=&card_type=&zip=&bank_name=&card_level=
+
+Response Headers
+
+alt-svc: h3="
+cache-control: no-store, no-cache, must-revalidate
+cf-cache-status: DYNAMIC
+cf-ray: 9ab8d99aaf64bcb0-ATL
+content-encoding: zstd
+content-security-policy: upgrade-insecure-requests
+content-type: text/html; charset=UTF-8
+date: Wed, 10 Dec 2025 01
+expires: Thu, 19 Nov 1981 08
+nel: {"report_to"
+panel: hpanel
+platform: hostinger
+pragma: no-cache
+report-to: {"group"
+server: cloudflare
+vary: Accept-Encoding
+x-powered-by: PHP/8.2.28
+x-turbo-charged-by: LiteSpeed
+
+
+<!DOCTYPE html>
+<html lang="zxx" class="js"><script src="chrome-extension://lgmpcpglpngdoalbgeoldeajfclnhafa/inpage.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <!--<base href="../">--><base href=".">
+    
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="https://madfox.at/images/favicon.png">
+    <!-- Page Title  -->
+    <title>Dashboard | MadFox</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="./dashboard_files/dashlite.css">
+
+    <link rel="stylesheet" href="./dashboard_files/jquery-linedtextarea.css">
+
+    <link rel="stylesheet" href="./dashboard_files/app.css">
+    <link id="skin-default" rel="stylesheet" href="./dashboard_files/theme.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.12.1/datatables.min.css"/>
+ 
+    <script type="text/javascript" src="./dashboard_files/chat.js.download"></script>
+
+    <script id="sbinit" src="" defer></script>
+    <script src="https://raw.githubusercontent.com/mckamey/countdownjs/master/countdown.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.2.4/angular-animate.min.js"></script>
+
+
+
+<style type="text/css">
+    @font-face {
+        font-family: Magic;
+        src: url(/images/MagicSchoolOne.ttf);
+    }
+      
+    .use_magic {
+        font-family: Magic!important;
+        color: darkgreen;
+    }
+</style>
+
+  <script>
+
+
+  function add_cart(id){
+    $('#but_'+id).removeAttr( "onclick" );
+    NioApp.Toast('Adding id:'+id+' in progress!', 'info');
+    $.post('/Dashboard/marketplace/add_cart/', {id:id}, function(response){
+          $('#but_'+id).html('Success');
+          $('#but_'+id).removeClass('btn btn-sm btn-light');
+          $('#but_'+id).addClass("btn btn-dim btn-success");
+          $("#count_cart").text(parseInt($("#count_cart").text())+1);
+          NioApp.Toast('Adding id:'+id+' is Success! Thank you!', 'success');
+
+    });
+  }
+
+  function check_card(id){
+    $("#check_rest_"+id).html("Loading...");
+    $.get('/Dashboard/marketplace/check/', {id:id}, function(response){
+        var rest = JSON.parse(response);
+         if (rest.status == 2) {
+           $("#check_rest_"+id).html("<span style='color:red;'>REFUNDED</span>");
+         }
+
+        if (rest.status == 0) {
+          $("#check_rest_"+id).html("<span style='color:green;'>APPROVAL</span>");
+        }
+         if (rest.status == 0) {
+           $("#check_rest_"+id).html("<span>TIMEOUT</span>");
+         }
+
+    });
+  }
+
+    function check_cardV2(id){
+      $("#check_rest_"+id).html("Loading...");
+      $.get('/Dashboard/marketplace/check/', {id:id}, function(response){
+          var rest = JSON.parse(response);
+           if (rest.status == 2) {
+             $("#check_rest_"+id).html("<span class='badge badge-danger'>REFUNDED</span>");
+           }
+
+          if (rest.status == 1) {
+            $("#check_rest_"+id).html("<span class='badge badge-success'>APPROVAL</span>");
+          }
+           if (rest.status == 0) {
+             $("#check_rest_"+id).html("<span class='badge badge-primary'>Timeout</span>");
+           }
+            if (rest.status == 3) {
+              $("#check_rest_"+id).html("<span class='badge badge-primary'>Checker offilne</span>");
+              if ($("#attention").length == true) {
+                $("#attention").click();
+              }
+            }
+
+      });
+    }
+  </script>
+  <style>
+  .err_form {
+        background: #3a262c!important;
+  }
+  </style>
+<link id="support-board" rel="stylesheet" type="text/css" href="./dashboard_files/tickets.css" media="all"></head>
+
+<body class="nk-body bg-lighter npc-general has-sidebar dark-mode no-touch nk-nio-theme" style="">
+   <div class="nk-app-root">
+       <!-- main @s -->
+       <div class="nk-main " style="background: url(/images/welcome.png) right bottom 60px / contain no-repeat;background-size: 200px;">
+           <!-- sidebar @s -->
+           <div class="nk-sidebar nk-sidebar-fixed is-dark" data-content="sidebarMenu">
+             <div class="nk-sidebar-element nk-sidebar-head" style="padding: 0px;/* padding-left: 100px; */padding-top: 7px;">
+             <div class="nk-sidebar-brand" style="    width: 100%;
+                 height: 100%;">
+             <a href="dashboard.php" class="logo-link nk-sidebar-logo">
+             <img src="./dashboard_files/flogo.png" class="logo-light logo-img" style="width: 280px;max-height: 50px;height: 70px;" alt="logo">
+             <img src="./dashboard_files/flogo.png" class="logo-dark logo-img" alt="logo-dark">
+             </a>
+             </div>
+             <div class="nk-menu-trigger mr-n2">
+             <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
+
+             </div>
+             </div>
+               <div class="nk-sidebar-element">
+                   <div class="nk-sidebar-content">
+                       <div class="nk-sidebar-menu" data-simplebar="init"><div class="simplebar-wrapper" style="margin: -16px 0px -40px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 16px 0px 40px;">
+                           <ul class="nk-menu">
+                             <li class="nk-menu-heading">
+                                 <h6 class="overline-title text-primary-alt">General</h6>
+                             </li>
+                               <li class="nk-menu-item">
+                                   <a href="dashboard.php" class="nk-menu-link" data-original-title="" title="">
+                                       <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/D.PNG"<em></em></span>
+                                       <span class="nk-menu-text">Dashboard / News</span>
+                                   </a>
+                               </li><!-- .nk-menu-item -->
+                               <li class="nk-menu-item">
+                                   <a href="market.php" class="nk-menu-link" data-original-title="" title="">
+                                       <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/C.PNG"<em></em></span>
+                                       <span class="nk-menu-text">Credit Cards</span>
+                                   </a>
+                               </li><!-- .nk-menu-item -->
+
+
+
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">Services</h6>
+                                </li>
+
+                               <li class="nk-menu-item">
+                                   <a href="balance.php" class="nk-menu-link" data-original-title="" title="">
+                                       <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/B.PNG"<em></em></span>
+                                       <span class="nk-menu-text">Bin reports <small class="badge badge-pill badge-outline-success "><b>Free</b></small></span>
+                                   </a>
+                               </li><!-- .nk-menu-item -->
+
+                               <li class="nk-menu-item has-sub">
+                                   <a href="#SocksList" class="nk-menu-link nk-menu-toggle" data-original-title="" title="">
+                                       <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/S.PNG"<em></em></span>
+                                       <span class="nk-menu-text">Socks Proxies </span>
+                                   </a>
+                                    <ul class="nk-menu-sub">
+                                        <li class="nk-menu-item">
+                                            <a href="balance.php" class="nk-menu-link" data-original-title="" title=""> 
+                                               <span class="nk-menu-text">Socks List</span>
+                                            </a>
+                                        </li>
+                                        <li class="nk-menu-item">
+                                            <a href="balance.php" class="nk-menu-link" data-original-title="" title=""> 
+                                               <span class="nk-menu-text">My Orders</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                               </li><!-- .nk-menu-item -->
+
+
+                               <li class="nk-menu-item">
+                                   <a href="balance.php" class="nk-menu-link" data-original-title="" title="">
+                                       <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/CC.PNG"<em></em></span>
+                                       <span class="nk-menu-text">CC Checker <small class="badge badge-pill badge-outline-success "><b>New</b></small></span>
+                                   </a>
+                               </li><!-- .nk-menu-item -->
+                               
+                              <!-- <li class="nk-menu-item">
+                                   <a href="/Dashboard#" class="nk-menu-link">
+                                       <span class="nk-menu-icon"><em class="icon ni ni-money"></em></span>
+                                       <span class="nk-menu-text">Balance Checker <small class="badge badge-pill badge-outline-warning "><b>Soon</b></small></span>
+                                   </a>
+                               </li> 
+                                -->
+
+                               <li class="nk-menu-item">
+                                   <a href="#" class="nk-menu-link" data-original-title="" title="">
+                                       <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/SMS.PNG"<em></em></span>
+                                       <span class="nk-menu-text">SMS verification <small class="badge badge-pill badge-outline-warning "><b>Soon</b></small></span>
+                                   </a>
+                               </li><!-- .nk-menu-item -->
+
+                               <li class="nk-menu-heading">
+                                   <h6 class="overline-title text-primary-alt">Account manage</h6>
+                               </li>
+                               <li class="nk-menu-item">
+                                   <a href="balance.php?hash=fd47cc26e037a88b0ac6b74fd837376d" class="nk-menu-link" data-original-title="" title="">
+                                       <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/BA.PNG"<em></em></span>
+                                       <span class="nk-menu-text">Balance / Add money</span>
+                                   </a>
+                               </li><!-- .nk-menu-item -->
+
+                                <li class="nk-menu-item">
+                                    <a href="balance.php?#?hash=539ca66aeb1b0144c152c9a92862407a" class="nk-menu-link" data-original-title="" title="">
+                                        <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/O.PNG"<em></em></span>
+                                        <span class="nk-menu-text">Orders list</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+
+                               <li class="nk-menu-item">
+                                 <a href="balance.php?#cart/?hash=e6d5fac01fee6258f43e46ae5626b3fd" class="nk-menu-link" data-original-title="" title="">
+                                     <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/M.PNG"<em></em></span>
+                                     <span class="nk-menu-text">My cart</span>
+                                 </a>
+                               </li>
+
+                                <!-- .nk-menu-item -->
+
+
+                                <!--
+                               <li class="nk-menu-item">
+                                  <a href="/Dashboard/marketplace/cart/" class="nk-menu-link">
+                                      <span class="nk-menu-icon"><em class="icon ni ni-cart"></em></span>
+                                      <span class="nk-menu-text">FAQ</span>
+                                  </a>
+                               </li>
+                             -->
+
+
+
+
+                              <li class="nk-menu-heading">
+                                  <h6 class="overline-title text-primary-alt">Telegram/Forums</h6>
+                              </li>
+
+                              <li class="nk-menu-item">
+                                  <a href="https://t.me/+jN0knMPFywYwY2Ni" target="_blank" class="nk-menu-link" data-original-title="" title="">
+                                      <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/T.PNG"<em></em></span>
+                                      <span class="nk-menu-text">Telegram (Updates news)</span>
+                                  </a>
+                              </li><!-- .nk-menu-item -->
+
+                               
+
+
+
+
+
+                              
+
+
+                              
+                              <li class="nk-menu-item">
+                                  <a href="support.php?hash=dfac2815178313b2d0d83f0d88c805b6" class="nk-menu-link" data-original-title="" title="">
+                                      <span class="nk-menu-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/SUPPORT.PNG"<em></em></span>
+                                      <span class="nk-menu-text">Support</span>
+                                  </a>
+                              </li><!-- .nk-menu-item -->
+
+                              
+                              
+                         
+
+
+                           
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">For sellers</h6>
+                                </li>
+
+  
+                                <li class="nk-menu-item">
+                                                <a href="balance.php" class="nk-menu-link" data-original-title="" title="">
+                                                    <span class="nk-menu-icon text-warning"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/SELLER.PNG"<em></em></span>
+                                                    <span class="nk-menu-text text-success">I'm Seller</span>
+                                                </a>
+                                 </li>
+
+
+                                
+
+
+
+
+                                                               <!--<li class="nk-menu-item has-sub">
+                                     <a href="#tools" class="nk-menu-link nk-menu-toggle">
+                                         <span class="nk-menu-icon"><em class="icon ni ni-exchange"></em></span>
+                                         <span class="nk-menu-text">Language</span>
+                                     </a>
+                                     <ul class="nk-menu-sub">
+                                         <li class="nk-menu-item">
+                                             <a href="/Lang/English" class="nk-menu-link"><span class="nk-menu-text">English</span></a>
+                                             <a href="/Lang/Russian" class="nk-menu-link"><span class="nk-menu-text">Russian</span></a>
+                                             <a href="/Lang/China" class="nk-menu-link"><span class="nk-menu-text">China</span></a>
+                                         </li>
+                                     </ul>
+                               </li>
+                             -->
+                           </ul><!-- .nk-menu -->
+                       </div></div></div></div><div class="simplebar-placeholder" style="width: auto; height: 950px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 312px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div><!-- .nk-sidebar-menu -->
+                   </div><!-- .nk-sidebar-content -->
+               </div><!-- .nk-sidebar-element -->
+           </div>
+<div class="nk-wrap ">
+    <!-- main header @s -->
+    <div class="nk-header nk-header-fixed is-light">
+        <div class="container-fluid">
+            <div class="nk-header-wrap">
+                <div class="nk-menu-trigger d-xl-none ml-n1">
+                    <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
+                </div>
+                <div class="nk-header-news d-none d-xl-block">
+                    <div class="nk-news-list">
+                        <span class="nk-news-item" href="#">
+                             <div class="nk-news-icon"><img style="display: block; margin-left: auto; margin-right: auto; width: 100%;" src="./img/Balance.PNG"
+                                <em></em>
+                            </div>
+                            <div class="nk-news-text pr
